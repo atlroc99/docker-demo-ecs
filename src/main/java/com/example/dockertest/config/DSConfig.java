@@ -12,6 +12,11 @@ public class DSConfig {
     private String database;
     private String dburl;
 
+    private String secretName;
+    private String secretId;
+    private String secretKey;
+    private String region;
+
     public String getUsername() {
         return username;
     }
@@ -42,5 +47,37 @@ public class DSConfig {
 
     public void setDburl(String dburl) {
         this.dburl = dburl;
+    }
+
+    public String getSecretName() {
+        return secretName;
+    }
+
+    public void setSecretName(String secretName) {
+        this.secretName = secretName;
+    }
+
+    public String getSecretId() {
+        return secretId;
+    }
+
+    public void setSecretId(String secretId) {
+        this.secretId = secretId;
+    }
+
+    public String getSecretKey() {
+        return secretKey;
+    }
+
+    public void setSecretKey(String secretKey) {
+        this.secretKey = secretKey;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
     }
 }

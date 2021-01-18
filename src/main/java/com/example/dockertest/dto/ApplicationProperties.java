@@ -14,6 +14,10 @@ public class ApplicationProperties {
     private String env;
     private String database;
     private String dbUrl;
+    private String secretName;
+    private String secretKey;
+    private String secretId;
+    private String region;
 
     public String getUsername() {
         return username;
@@ -45,5 +49,37 @@ public class ApplicationProperties {
 
     public void setDbUrl(String dbUrl) {
         this.dbUrl = dbUrl;
+    }
+
+    public String getSecretName() {
+        return secretName;
+    }
+
+    public void setSecretName(String secretName) {
+        this.secretName = secretName;
+    }
+
+    public String getSecretKey() {
+        return secretKey;
+    }
+
+    public void setSecretKey(String secretKey) {
+        this.secretKey = secretKey;
+    }
+
+    public String getSecretId() {
+        return secretId;
+    }
+
+    public void setSecretId(String secretId) {
+        this.secretId = secretId;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
     }
 }
