@@ -38,6 +38,7 @@ public class DemoController {
     }
 
 }
-// build and push docker image to docker hub via mvn docker plugin
+// build and
+// push docker image to docker hub via mvn docker plugin
 //mvn clean package -Drevision=<versionNO> -Ddockerfile.useMavenSettingsForAuth=true dockerfile:push
 //docker run --name spring-boot-app -d -p 8090:8080 72611cd385af --name=Mohammad --age=23 --salary=1000000
