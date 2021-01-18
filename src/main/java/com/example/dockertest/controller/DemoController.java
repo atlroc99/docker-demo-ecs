@@ -1,6 +1,10 @@
 package com.example.dockertest.controller;
 
+import com.example.dockertest.config.DSConfig;
+import com.example.dockertest.dto.ApplicationProperties;
 import com.example.dockertest.service.ImageService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,9 +16,11 @@ import java.util.List;
 public class DemoController {
 
     private final ImageService imageService;
+    private final DSConfig dsConfig;
 
-    public DemoController(ImageService imageService) {
+    public DemoController(ImageService imageService, DSConfig dsConfig) {
         this.imageService = imageService;
+        this.dsConfig = dsConfig;
     }
 
     @GetMapping
@@ -37,6 +43,16 @@ public class DemoController {
         return imageService.getEnvOptions();
     }
 
+    @GetMapping("/env/properties")
+    private ResponseEntity<ApplicationProperties> getProperties() {
+        ApplicationProperties properties = ApplicationProperties.builder()
+                .username(dsConfig.getUsername())
+                .env(dsConfig.getEnvironment())
+                .database(dsConfig.getDatabase())
+                .dbUrl(dsConfig.getDburl())
+                .build();
+        return new ResponseEntity<>(properties, HttpStatus.OK);
+    }
 }
 // build and
 // push docker image to docker hub via mvn docker plugin
